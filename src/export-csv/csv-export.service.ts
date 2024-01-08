@@ -23,8 +23,7 @@ export class CsvExportService {
   ) {
     //Génération automatique du fichier csv le 25 de chaque mois
     //Pour tester cette fonctionnalité, remplacer par '*/1 * * * *' pour le générer chaques minutes.
-    //Pour le générer automatiquement chaque 25  :  '0 0 25 * *'
-    cron.schedule('*/1 * * * *', async () => {
+    cron.schedule('0 0 25 * *', async () => {
       await this.exportCsvForCurrentMonth();
     });
   }
